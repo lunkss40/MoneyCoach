@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Money Coach - Analytics</title>
+  <meta charset="UTF-8">
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+
+    body {
+      font-family: serif ;
+      background-color: #f5f0ff;
+      margin: 0;
+    }
+
+    
+    .navbar {
+      background-color: #7c3aed;
+      color: white;
+      padding: 15px;
+    }
+
+    .navbar h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    
+    .container {
+      padding: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 5px;
+    }
+
+    
+    .stats {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .box {
+      background: white;
+      border: 2px solid #ddd6fe;
+      border-radius: 10px;
+      padding: 20px;
+      flex: 1;
+    }
+
+    .box h3 {
+      margin: 0;
+      font-size: 14px;
+      color: #7c3aed;
+    }
+
+    .box p {
+      font-size: 24px;
+      margin: 5px 0 0 0;
+      font-weight: bold;
+    }
+
+    
+    .chart-box {
+      background: white;
+      border: 2px solid #ddd6fe;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    
+    .category-box {
+      background: white;
+      border: 2px solid #ddd6fe;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .category {
+      margin-bottom: 12px;
+    }
+
+    .bar {
+      height: 8px;
+      background: #ddd6fe;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 8px;
+      background: #7c3aed;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <h1>Money Coach</h1>
+  </div>
+
+  <div class="container">
+
+    <h2>Analytics Page</h2>
+    <p>This page shows how students spend their money</p>
+
+   
+    <div class="stats">
+
+      <div class="box">
+        <h3>Total Spending</h3>
+        <p>£734</p>
+      </div>
+
+      <div class="box">
+        <h3>Monthly Budget</h3>
+        <p>£900</p>
+      </div>
+
+      <div class="box">
+        <h3>Top Category</h3>
+        <p>Food</p>
+      </div>
+
+    </div>
+
+    
+    <div class="chart-box">
+      <h3>Monthly Spending</h3>
+      <canvas id="myChart"></canvas>
+    </div>
+
+    
+    <div class="category-box">
+      <h3>Spending by Category</h3>
+
+      <div class="category">
+        Food - £228
+        <div class="bar">
+          <div class="bar-fill" style="width:90%"></div>
+        </div>
+      </div>
+
+      <div class="category">
+        Rent - £195
+        <div class="bar">
+          <div class="bar-fill" style="width:70%"></div>
+        </div>
+      </div>
+
+      <div class="category">
+        Transport - £63
+        <div class="bar">
+          <div class="bar-fill" style="width:30%"></div>
+        </div>
+      </div>
+
+      <div class="category">
+        Entertainment - £148
+        <div class="bar">
+          <div class="bar-fill" style="width:60%"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    var ctx = document.getElementById("myChart");
+
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: ["Sep", "Oct", "Nov", "Dec", "Jan", "Feb"],
+        datasets: [{
+          label: "Money Spent",
+          data: [680, 750, 820, 960, 710, 734],
+          backgroundColor: "#7c3aed"
+        }]
+      }
+    });
+
+  </script>
+
+</body>
+</html>
