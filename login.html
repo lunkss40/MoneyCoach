@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Money Coach</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Money Coach</h1>
+    <p>Welcome back — sign in to continue</p>
+
+    <form id="loginForm">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="you@example.com"/>
+      <p class="error" id="emailError">Please enter a valid email.</p>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="••••••••"/>
+      <p class="error" id="passwordError">Password must be at least 6 characters.</p>
+
+      <button type="submit">Sign in</button>
+
+      <p id="successMsg">Signed in successfully!</p>
+
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
